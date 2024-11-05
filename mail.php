@@ -11,11 +11,11 @@ function enviarCodigoEmail($destinatario, $codigo) {
 
     try {
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; //Preencher
+        $mail->Host = 'smtp.gmail.com'; 
         $mail->SMTPAuth = true;
       		
-		$mail->Username = 'seu e-mail de envio'; //Preencher
-        $mail->Password = 'senha app 16 caracteres'; //Preencher
+		$mail->Username = 'seu e-mail de envio'; //Preencher com e-mail para envio
+        $mail->Password = 'senha app 16 caracteres'; //Preencher a senha do app
 		
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
@@ -24,7 +24,7 @@ function enviarCodigoEmail($destinatario, $codigo) {
         $mail->setLanguage('pt_br');
         $mail->CharSet = 'UTF-8';
 
-        $mail->setFrom('seu e-mail de envio', 'Sistema de Login'); //Preencher
+        $mail->setFrom('seu e-mail de envio', 'Sistema de Login'); //Preencher com e-mail para envio
         $mail->addAddress($destinatario);
 
         $mail->isHTML(true);
